@@ -3,16 +3,33 @@
 }
 
 .markdown p,
-.markdown ul,
+/* .markdown ul, */
+/* .markdown li, */
 .markdown ol,
 .markdown blockquote {
-  @apply my-6;
+  @apply my-3;
 }
 
-.markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+.markdown p {
+  @apply text-justify
 }
 
-.markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+.markdown ul {
+  /* @apply list-square ml-8; */
+}
+
+.markdown ol {
+  @apply list-decimal ml-8;
+}
+
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+  @apply leading-snug mt-8 mb-2;
+}
+
+.markdown blockquote {
+  @apply mt-10 mb-8
+}
+
+.markdown pre.sn-code {
+  @apply mt-16
 }

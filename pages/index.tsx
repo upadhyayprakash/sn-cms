@@ -15,6 +15,17 @@ type Props = {
 const Index = ({ allPosts }: Props) => {
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
+  
+  // const images = [
+  //   {src: '//placekitten.com/1500/500', title: 'Title-1', caption: <h1>Caption-1</h1>},
+  //   {src: '//placekitten.com/4000/3000', title: 'Title-2', caption: 'Caption-2'},
+  //   {src: '//placekitten.com/800/1200', title: 'Title-3', caption: 'Caption-3'},
+  //   {src: '//placekitten.com/1500/1500', title: 'Title-4', caption: 'Caption-4'},
+  // ];
+
+  // const [photoIndex, setPhotoIndex] = useState(0);
+  // const [isOpen, setIsOpen] = useState(true);
+
   return (
     <>
       <Layout>
@@ -27,6 +38,7 @@ const Index = ({ allPosts }: Props) => {
             <HeroPost
               title={heroPost.title}
               coverImage={heroPost.coverImage}
+              tags={heroPost.tags}
               date={heroPost.date}
               author={heroPost.author}
               slug={heroPost.slug}
@@ -49,6 +61,7 @@ export const getStaticProps = async () => {
     'slug',
     'author',
     'coverImage',
+    'tags',
     'excerpt',
   ])
 

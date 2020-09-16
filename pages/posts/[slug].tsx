@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
+
 import Container from '../../components/container'
 import PostBody from '../../components/post-body'
 import Header from '../../components/header'
@@ -9,7 +10,6 @@ import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
-import markdownToHtml from '../../lib/markdownToHtml'
 import PostType from '../../types/post'
 
 type Props = {
@@ -43,6 +43,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
                 coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
+                tags={post.tags}
               />
               <PostBody content={post.content} />
             </article>
@@ -70,8 +71,11 @@ export async function getStaticProps({ params }: Params) {
     'content',
     'ogImage',
     'coverImage',
+    'tags'
   ])
-  const content = await markdownToHtml(post.content || '')
+  // const content = await markdownToHtml(post.content || '')
+  // const content = await markdownToHtml(post.content || '')
+  const content = post.content;
 
   return {
     props: {
@@ -87,10 +91,10 @@ export async function getStaticPaths() {
   const posts = getAllPosts(['slug'])
 
   return {
-    paths: posts.map((posts) => {
+    paths: posts.map((post) => {
       return {
         params: {
-          slug: posts.slug,
+          slug: post.slug,
         },
       }
     }),

@@ -13,7 +13,6 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const fullPath = join(postsDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
-
   type Items = {
     [key: string]: string
   }
@@ -33,7 +32,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
       items[field] = data[field]
     }
   })
-
+  
   return items
 }
 

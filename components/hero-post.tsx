@@ -4,9 +4,12 @@ import CoverImage from './cover-image'
 import Link from 'next/link'
 import Author from '../types/author'
 
+import Tag from '../types/tag';
+
 type Props = {
   title: string
   coverImage: string
+  tags: Tag[]
   date: string
   excerpt: string
   author: Author
@@ -16,6 +19,7 @@ type Props = {
 const HeroPost = ({
   title,
   coverImage,
+  tags,
   date,
   excerpt,
   author,
@@ -39,7 +43,7 @@ const HeroPost = ({
         </div>
         <div>
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-          <Avatar name={author.name} picture={author.picture} />
+          <Avatar name={author.name} picture={author.picture} tags={tags} />
         </div>
       </div>
     </section>

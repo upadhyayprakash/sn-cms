@@ -8,14 +8,25 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/styles": "^4.10.0",
+    "@types/react-syntax-highlighter": "^11.0.5",
     "classnames": "2.2.6",
     "date-fns": "2.10.0",
     "gray-matter": "4.0.2",
+    "highlight.js": "^10.1.2",
+    "jquery": "^3.5.1",
     "next": "latest",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-image-lightbox": "^5.1.1",
+    "react-markdown": "^4.3.1",
+    "react-syntax-highlighter": "^13.5.1",
     "remark": "11.0.2",
     "remark-html": "10.0.0",
+    "remark-slug": "^6.0.0",
+    "reveal.js": "^4.0.2",
     "typescript": "^3.9.2"
   },
   "devDependencies": {

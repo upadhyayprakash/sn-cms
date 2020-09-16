@@ -1,6 +1,242 @@
 @tailwind base;
 
 /* Write your own custom base styles here */
+/* Including Google fonts */
+/* @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Poppins'), url(/fonts/Poppins-Regular.ttf) format('ttf');
+} */
+/* @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap'); */
+@import url('/fonts/poppins.css');
+@import url('/syntax-highlight/default.css');
+@import url('/bootstrap/bootstrap.min.css');
+
+/* Defining SN(SaneNeurons) Custom Variables */
+:root {
+    --primary-color: 174, 122, 250;
+    --main-text-color: 30, 30, 30;
+    --main-bg-color: 255, 255, 255;
+    --night-text-color: 230, 230, 230;
+    --night-bg-color: 30, 30, 30;
+}
+
+/* Scrollbar Styling */
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #aaa; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888; 
+}
+
+body {
+    font-family: Poppins;
+    color: rgba(var(--main-text-color), 1);
+    background-color: rgba(var(--main-bg-color), 1);
+}
+
+/* Typography base styling */
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.7em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.3em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 0.8em;
+}
+
+a {
+    color: rgba(var(--primary-color), 1);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: rgba(var(--primary-color), 0.75);
+    font-weight: 600;
+}
+
+/* Table base styling */
+.sn-table table {
+    /* width: 100%; */
+    /* display: block; */
+    margin: 0 auto;
+    overflow: hidden;
+    overflow-x: auto;
+    word-break: normal;
+    margin-bottom: 16px;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.sn-table th {
+    padding: 16px;
+    font-weight: 600;
+    line-height: 1.5rem;
+    white-space: pre;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.sn-table td {
+    padding: 16px;
+    font-weight: 400;
+    line-height: 1.43;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    letter-spacing: 0.01071em;
+}
+
+/* List Styling */
+.sn-list {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 100%;
+    list-style-position: outside;
+}
+
+
+/* Blockquote Styling */
+
+.blockquote-custom {
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.blockquote-custom-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -25px;
+    left: 50px;
+    background-color: rgba(var(--primary-color), 1);
+}
+
+/* Ordered List Styling */
+
+ol {
+    counter-reset: myCounter;
+}
+
+ol>li {
+    list-style: none;
+}
+ol>li:before {
+    counter-increment: myCounter;
+    content:counter(myCounter);
+    color: white;
+    background-color: rgba(var(--primary-color), 1);
+    display: inline-block;
+    text-align: center;
+    margin: 5px 10px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+}
+
+/* Unordered List Styling */
+
+ul.sn-list>li {
+    list-style: none;
+}
+ul.sn-list>li:before {
+    content: "\2713";
+    color: #888;
+    background: transparent;
+    display: inline-block;
+    text-align: center;
+    margin: 5px 5px;
+    font-weight: 600;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+}
+ul, ol {
+    padding: 2rem;
+    list-style: unset;
+}
+
+/* Table Styling */
+
+.sn-table {
+    
+}
+
+/* Image Styling */
+
+img.sn-image {
+    margin: 0 auto;
+}
+
+  
+img.sn-hover {
+    cursor: pointer;
+}
+
+.sn-html img {
+    text-align: center;
+}
+
+/* figure & figcaption Styling */
+figure.figure {
+    display: block;
+}
+
+figcaption {
+    text-align: center;
+    color: rgba(var(--main-text-color), 0.5);
+}
+
+/* Styling Image Gallery */
+img.ril-image-current {
+    width: 60%;
+    height: auto;
+}
+
+/* Styling Tags Container */
+.tags-container span {
+    color: rgba(117, 117, 117, 1);
+    padding: 5px 10px;
+    background-color: rgba(242, 242, 242, 1);
+    border-radius: 3px;
+    font-size: 13px;
+    margin-right: 5px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
 
 /* Start purging... */
 @tailwind components;
